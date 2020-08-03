@@ -120,10 +120,11 @@ a:hover{
 
 h1, h2, h3, h4{
   color: #333;
+  font-family: 'Dosis', sans-serif;
 }
 
 p{
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Shadows Into Light Two', cursive;
   line-height: 1.5;
 }
 
