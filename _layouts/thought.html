@@ -22,7 +22,8 @@ layout: default
       {{ content }}
     </div>
 
-    {% include cause.html %}
+    {% if page.cause %}{% include cause.html %}{% endif %}
+
 
     <div class="share">
       <span class="lbl">Pass it on</span>
