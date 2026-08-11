@@ -1,0 +1,56 @@
+# ─────────────────────────────────────────────────────────────
+#  Studio — the editor at urspective.com/studio
+#  Writes Markdown straight into _posts/ in your GitHub repo.
+# ─────────────────────────────────────────────────────────────
+
+backend:
+  name: github
+  repo: mega-prime/mega-prime.github.io   # ← change if your repo differs
+  branch: main                             # ← or master, whichever you use
+  # base_url is the little login helper you set up once. See README-SETUP.md step 6.
+  base_url: https://REPLACE-ME.workers.dev
+
+publish_mode: simple
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: thoughts
+    label: "Mega Thoughts"
+    label_singular: "Thought"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{topic}}"
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: "Title", widget: string }
+      - { name: date, label: "Date", widget: datetime, format: "YYYY-MM-DD" }
+      - name: topic
+        label: "Topic"
+        widget: select
+        options: [Mindset, Mental Health, Communication, Empathy, Leadership, "Loss & Love", Money, Work, Poems, Quotes]
+      - { name: summary, label: "One-line summary", hint: "Shows on the thread and in search results. Keep it under 90 characters.", widget: string }
+      - { name: pull, label: "Pull quote", hint: "The line most worth screenshotting. Optional — leave blank to skip.", widget: string, required: false }
+      - { name: featured, label: "Show under 'Where to start' on the About page", widget: boolean, default: false, required: false }
+      - { name: comments, label: "Comments open on this thought", widget: boolean, default: true }
+      - { name: cause, label: "Show the Jimmy Fund block", widget: boolean, default: true, required: false }
+      - { name: body, label: "The thought", widget: markdown }
+
+  - name: settings
+    label: "Site controls"
+    files:
+      - name: products
+        label: "Shop items"
+        file: "_data/products.yml"
+        fields:
+          - name: products
+            label: "Products"
+            widget: list
+            fields:
+              - { name: name, label: "Name", widget: string }
+              - { name: art, label: "Text on the product", widget: string }
+              - { name: price, label: "Price", widget: string }
+              - { name: detail, label: "Sizes / details", widget: string }
+              - { name: style, label: "Card colour", widget: select, options: ["", "lt", "am"], required: false }
+              - { name: buy_url, label: "Buy link", hint: "Leave blank to show as 'Coming soon'.", widget: string, required: false }
