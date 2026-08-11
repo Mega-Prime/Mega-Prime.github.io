@@ -1,0 +1,31 @@
+# Merchandise. Add buy_url once the product is live in Printful/Fourthwall.
+# No buy_url = the item shows as "Coming soon".
+# The whole page stays hidden until features.shop is true in _config.yml
+
+- name: The Formula Tee
+  art: "Level of effort<br><span class='hl'>=</span><br>Opportunity"
+  price: "$28"
+  detail: "unisex · S–3XL"
+  style: ""
+  buy_url: ""
+
+- name: Will It Help Cap
+  art: "Will it<br><span class='hl'>help?</span>"
+  price: "$26"
+  detail: "one size"
+  style: "lt"
+  buy_url: ""
+
+- name: More Heart Mug
+  art: "More heart<br>Less ego"
+  price: "$18"
+  detail: "11oz"
+  style: "am"
+  buy_url: ""
+
+- name: Not Built To Quit Hoodie
+  art: "Not built<br>to <span class='hl'>quit</span>"
+  price: "$52"
+  detail: "heavyweight"
+  style: ""
+  buy_url: ""
