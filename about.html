@@ -1,0 +1,36 @@
+---
+layout: default
+permalink: /about/
+nav: about
+title: About Mega
+description: Father. Friend. Educator. Scholar. Engineer. Human.
+---
+<section class="hero">
+  <div class="wrap">
+    <div class="stamp"><span>Who's writing</span><i class="bar"></i></div>
+    <h1>Father. Friend.<br>Educator. Engineer.<br><span style="color:var(--beacon)">Human.</span></h1>
+    <p>Hey, I'm Mega. Every day I'm working to be the best version of myself, and I'm hoping you're here to do the same.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <img class="portrait" src="{{ '/assets/img/mega.jpg' | relative_url }}" alt="Mega" width="280" height="280">
+
+    <div class="body">
+      <p>These are my thoughts and points of view on some common things in life, and some not so common. I call them <em>Mega Thoughts</em>.</p>
+      <p>I share them hoping to inspire you, or to help you through a time of need. It isn't always easy to accept truth, or change, or the rest of it. But know that I'm here with you for guidance, for support, and just as an ear if that's what you need.</p>
+      <p>I appreciate you. — <strong>Mega</strong></p>
+    </div>
+
+    <div class="sec-h" id="start-here" style="margin-top:52px"><h2>Where to start</h2></div>
+    <p class="sec-sub">Three from the archive, if you're new.</p>
+    {%- assign picks = site.posts | where: 'featured', true -%}
+    {%- if picks.size == 0 -%}{%- assign picks = site.posts | slice: 0, 3 -%}{%- endif -%}
+    {% include thread.html posts=picks %}
+
+    {% include cause.html %}
+  </div>
+</section>
+
+{% include subscribe-band.html id="about" heading="Still here?<br>Come along." blurb="One thought each morning. That's the whole offer." %}

@@ -1,0 +1,48 @@
+---
+layout: default
+permalink: /shop/
+nav: shop
+title: Shop
+description: Wear the thought. A share of every sale goes to the Jimmy Fund.
+sitemap: false
+---
+{% if site.features.shop %}
+<section class="sec">
+  <div class="wrap-wide">
+    <h1 class="disp" style="font-size:clamp(30px,5vw,46px);margin:0 0 12px">Wear the thought</h1>
+    <p class="sec-sub">Printed and shipped on order. A share of every sale goes to the Jimmy Fund.</p>
+
+    <div class="goods">
+      {%- for item in site.data.products %}
+      <div class="good">
+        <div class="good-art{% if item.style %} {{ item.style }}{% endif %}">
+          {% unless item.buy_url %}<span class="soon">Coming soon</span>{% endunless %}
+          <div class="txt">{{ item.art }}</div>
+        </div>
+        <div class="good-b">
+          <h3>{{ item.name }}</h3>
+          <div class="pr">{{ item.price }} &middot; {{ item.detail }}</div>
+          {% if item.buy_url %}
+          <a class="buy" href="{{ item.buy_url }}" rel="noopener" style="display:block;text-align:center;text-decoration:none">Add to cart</a>
+          {% else %}
+          <a class="buy" href="{{ '/subscribe/' | relative_url }}" style="display:block;text-align:center;text-decoration:none;background:var(--line);color:var(--slate)">Tell me when it drops</a>
+          {% endif %}
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include subscribe-band.html id="shop" heading="Free instead:<br>the thought cards" blurb="Twelve of the most-shared thoughts, formatted for your lock screen and for printing. Sent when you subscribe." %}
+
+{% else %}
+<section class="hero">
+  <div class="wrap">
+    <div class="stamp"><span>Not open yet</span><i class="bar"></i></div>
+    <h1>The shop<br>isn't open.</h1>
+    <p>It will be. Subscribe and you'll hear about it first.</p>
+    <div class="hero-foot"><a class="ghost" href="{{ '/subscribe/' | relative_url }}">Subscribe &rarr;</a><a class="ghost" href="{{ '/' | relative_url }}">Read today's thought</a></div>
+  </div>
+</section>
+{% endif %}

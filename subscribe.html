@@ -1,0 +1,74 @@
+---
+layout: default
+permalink: /subscribe/
+nav: subscribe
+title: Subscribe
+description: One thought, every morning. Free, by email or text.
+---
+<section class="hero">
+  <div class="wrap">
+    <div class="stamp"><span>Get the thought</span><i class="bar"></i></div>
+    <h1>One thought.<br>Every morning.</h1>
+    <p>Two minutes to read. Free, forever. Leave whenever you want — every message has a one-tap exit.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Email</h2>
+      <span class="sec-sub" style="margin:0;color:#2E7D5B">&#9679; Live</span>
+    </div>
+    <p class="sec-sub">Delivered the moment a thought is posted. Nothing else, ever.</p>
+    {% include email-form.html id="sub" light=true %}
+  </div>
+</section>
+
+<section class="sec sec-alt" id="text">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Text message</h2>
+      {% if site.features.sms %}
+      <span class="sec-sub" style="margin:0;color:#2E7D5B">&#9679; Live</span>
+      {% else %}
+      <span class="sec-sub" style="margin:0;color:var(--beacon-deep)">&#9670; Opening soon</span>
+      {% endif %}
+    </div>
+    <p class="sec-sub">A short line and a link, straight to your phone.</p>
+
+    {% if site.features.sms and site.services.sms_form_action != "" %}
+    <form class="row" style="max-width:100%" action="{{ site.services.sms_form_action }}" method="post">
+      <label class="skip" for="tel">Mobile number</label>
+      <input class="inp light" id="tel" type="tel" name="phone" placeholder="(555) 000-0000" required>
+      <button class="btn" type="submit">Text it to me</button>
+    </form>
+    {% else %}
+    <form class="row" style="max-width:100%" id="smsWaitlist">
+      <label class="skip" for="tel">Mobile number</label>
+      <input class="inp light" id="tel" type="tel" placeholder="(555) 000-0000" required>
+      <button class="btn" type="submit">Join the waitlist</button>
+    </form>
+    <p class="fine dark" id="smsNote">
+      Texts aren't switched on yet. Carriers require registration before a number can send messages like these,
+      so the waitlist tells Mega whether it's worth doing. You'll get one message when it opens, and nothing else.
+    </p>
+    {% endif %}
+
+    <p class="fine dark">
+      By joining you agree to receive up to 7 messages a month from URSpective.
+      Reply STOP to cancel, HELP for help. Message and data rates may apply.
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-h"><h2>Or don't give me anything</h2></div>
+    <p class="sec-sub">Follow by RSS, or check in whenever you feel like it. No account, no tracking.</p>
+    <div class="chips">
+      <a class="chip" href="{{ '/feed.xml' | relative_url }}">RSS feed</a>
+      {% if site.social.linkedin %}<a class="chip" href="{{ site.social.linkedin }}" rel="noopener">LinkedIn</a>{% endif %}
+      <a class="chip" href="{{ '/archive/' | relative_url }}">Just read the archive</a>
+    </div>
+  </div>
+</section>

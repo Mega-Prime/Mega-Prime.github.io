@@ -1,0 +1,49 @@
+---
+layout: default
+permalink: /archive/
+nav: archive
+title: The Archive
+description: Every Mega Thought, searchable, sorted by topic.
+---
+<section class="sec">
+  <div class="wrap">
+    <h1 class="disp" style="font-size:clamp(30px,5vw,46px);margin:0 0 14px">The Archive</h1>
+    <p class="sec-sub">{{ site.posts.size }} thoughts. Search them, or pick a topic.</p>
+
+    <div class="row" style="max-width:100%;margin-bottom:24px">
+      <label class="skip" for="q">Search thoughts</label>
+      <input class="inp light" id="q" type="search" placeholder="Search — try &quot;patience&quot; or &quot;plan&quot;" autocomplete="off">
+    </div>
+
+    <div class="chips" id="topicChips" style="margin-bottom:34px">
+      <button class="chip on" type="button" data-topic="">All <span class="n">{{ site.posts.size }}</span></button>
+      {%- assign topics = site.posts | map: 'topic' | compact | uniq | sort -%}
+      {%- for t in topics -%}
+        {%- assign count = site.posts | where: 'topic', t | size -%}
+        <button class="chip" type="button" data-topic="{{ t }}">{{ t }} <span class="n">{{ count }}</span></button>
+      {%- endfor -%}
+    </div>
+
+    <p class="sec-sub" id="resultCount" hidden></p>
+
+    <div class="thread" id="results">
+      {%- for p in site.posts %}
+      <a class="t-item" href="{{ p.url | relative_url }}"
+         data-topic="{{ p.topic }}"
+         data-text="{{ p.title | append: ' ' | append: p.summary | append: ' ' | append: p.content | strip_html | normalize_whitespace | downcase | escape }}">
+        <div class="t-meta">
+          <span class="no">No. {% include num.html post=p %}</span>
+          <span>{{ p.date | date: '%m.%d.%Y' }}</span>
+          {% if p.topic %}<span>{{ p.topic }}</span>{% endif %}
+        </div>
+        <h3>{{ p.title }}</h3>
+        {% if p.summary %}<p>{{ p.summary }}</p>{% endif %}
+      </a>
+      {%- endfor %}
+    </div>
+
+    <p class="sec-sub" id="noResults" hidden style="margin-top:30px">Nothing matched that. Try a shorter word, or clear the search to see everything.</p>
+  </div>
+</section>
+
+{% include subscribe-band.html id="archive" %}

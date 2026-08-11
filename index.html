@@ -1,0 +1,65 @@
+---
+layout: default
+nav: today
+title: Mega Thoughts
+---
+{%- assign latest = site.posts.first -%}
+{%- assign rest = site.posts | slice: 1, 6 -%}
+
+{% if latest %}
+<section class="hero">
+  <div class="wrap">
+    <div class="stamp">
+      <span>Thought No. {% include num.html post=latest %}</span>
+      <span>&middot;</span>
+      <span>{{ latest.date | date: '%a %m.%d.%y' }}</span>
+      <i class="bar"></i>
+      {% if latest.topic %}<span>{{ latest.topic }}</span>{% endif %}
+    </div>
+    <h1>{{ latest.title }}</h1>
+    {{ latest.content }}
+    <div class="hero-foot">
+      <a class="ghost" href="{{ latest.url | relative_url }}">Read &amp; comment &rarr;</a>
+      <button class="ghost" type="button" data-copy="{{ latest.url | absolute_url }}">Copy link</button>
+      <a class="ghost" href="{{ latest.url | relative_url }}#conversation">Join the conversation</a>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="hero">
+  <div class="wrap">
+    <div class="stamp"><span>Nothing here yet</span><i class="bar"></i></div>
+    <h1>Write the first thought</h1>
+    <p>Add a Markdown file to <code>_posts/</code> and it lands right here.</p>
+  </div>
+</section>
+{% endif %}
+
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>The Thread</h2>
+      <a class="lnk" href="{{ '/archive/' | relative_url }}">All {{ site.posts.size }} thoughts &rarr;</a>
+    </div>
+    {%- assign first_post = site.posts.last -%}
+    <p class="sec-sub">Every thought since {{ first_post.date | date: '%m.%d.%Y' }}.</p>
+    {% include thread.html posts=rest %}
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-h"><h2>Find a thought for today</h2></div>
+    <p class="sec-sub">Sorted by what you need right now.</p>
+    <div class="chips">
+      <a class="chip on" href="{{ '/archive/' | relative_url }}">All <span class="n">{{ site.posts.size }}</span></a>
+      {%- assign topics = site.posts | map: 'topic' | compact | uniq | sort -%}
+      {%- for t in topics -%}
+        {%- assign count = site.posts | where: 'topic', t | size -%}
+        <a class="chip" href="{{ '/archive/' | relative_url }}?topic={{ t | cgi_escape }}">{{ t }} <span class="n">{{ count }}</span></a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% include subscribe-band.html id="home" %}

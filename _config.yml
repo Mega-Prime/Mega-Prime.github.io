@@ -1,0 +1,72 @@
+# ─────────────────────────────────────────────────────────────
+#  URSpective — site configuration
+#  Change a value here, save, push. The site rebuilds itself.
+# ─────────────────────────────────────────────────────────────
+
+title: URSpective
+tagline: Your perspective — change it daily
+description: >-
+  Mega Thoughts. Short daily writing on mindset, mental health,
+  communication and getting back up. One thought, every morning.
+author: Mega
+author_full: M.E. Stanton
+email: hello@urspective.com
+url: "https://urspective.com"
+baseurl: ""
+
+# ── FEATURE SWITCHES ─────────────────────────────────────────
+# true = on, false = off. These are the switches from Studio.
+features:
+  comments: true          # master switch for all comment threads
+  shop: false             # hides Shop from menus + blocks the page
+  sms: false              # false = phone field shows as a waitlist
+  show_gaps: true         # dashed markers on the thread for quiet stretches
+  cause_block: true       # the Jimmy Fund block on thought pages
+
+# ── SERVICES ─────────────────────────────────────────────────
+# Fill these in after you sign up. Empty = that feature stays dark.
+services:
+  hyvor_website_id: ""            # Hyvor Talk → Console → Website ID
+  buttondown_username: ""         # your Buttondown handle
+  sms_form_action: ""             # leave blank while on the waitlist
+
+# ── THE CAUSE ────────────────────────────────────────────────
+cause:
+  label: A cause I stand behind
+  text: >-
+    Cancer moves too fast and needs to be slowed. Stopped. My friend Annie
+    was diagnosed at 29 and walked the long road. Please support the fight.
+  link_text: "Annie's fundraising page"
+  link_url: "https://danafarber.jimmyfund.org/site/TR?fr_id=1390&pg=personal&px=1013712&s_hasSecureSession=true"
+
+# ── LINKS ────────────────────────────────────────────────────
+social:
+  linkedin: "https://www.linkedin.com/in/mestanton/"
+
+# ── JEKYLL ───────────────────────────────────────────────────
+permalink: /thoughts/:title/
+timezone: America/New_York
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values:
+      layout: thought
+      comments: true
+
+sass:
+  style: compressed
+
+exclude:
+  - README-SETUP.md
+  - MIGRATION.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
