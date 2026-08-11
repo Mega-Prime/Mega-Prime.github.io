@@ -21,7 +21,7 @@ features:
   shop: false             # hides Shop from menus + blocks the page
   sms: false              # false = phone field shows as a waitlist
   show_gaps: true         # dashed markers on the thread for quiet stretches
-  cause_block: true       # the Jimmy Fund block on thought pages
+  cause_block: false       # the Jimmy Fund block on thought pages
 
 # ── SERVICES ─────────────────────────────────────────────────
 # Fill these in after you sign up. Empty = that feature stays dark.
