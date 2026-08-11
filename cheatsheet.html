@@ -1,0 +1,218 @@
+---
+permalink: /cheatsheet/
+sitemap: false
+title: Posting cheat sheet
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cheat Sheet — URSpective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300..700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#141B34">
+<style>
+:root{--ink:#141B34;--dusk:#232F55;--slate:#5B6683;--paper:#F4F6FB;--beacon:#F2A93B;--deep:#B9760A;--line:#DDE2EE;--go:#2E7D5B;--stop:#C0455F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:#E4E8F4;font-family:'Newsreader',Georgia,serif;font-size:17px;line-height:1.55;-webkit-text-size-adjust:100%}
+.w{max-width:640px;margin:0 auto;padding:0 18px 60px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-stretch:112%;text-transform:uppercase;font-size:34px;line-height:.95;letter-spacing:-.025em;margin:0 0 8px;color:#fff}
+h1 i{color:var(--beacon);font-style:normal}
+.sub{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--beacon);margin:0 0 4px}
+.lede{font-size:15px;color:#AEB8D6;margin:10px 0 0;line-height:1.6}
+header{padding:34px 0 26px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:6px}
+
+details{border-bottom:1px solid rgba(255,255,255,.1)}
+summary{font-family:'Archivo',sans-serif;font-weight:700;font-stretch:106%;font-size:17px;text-transform:uppercase;letter-spacing:-.005em;
+  color:#fff;padding:18px 0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;min-height:56px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:'IBM Plex Mono',monospace;color:var(--beacon);font-size:20px;font-weight:400;width:16px;flex:none}
+details[open] summary::before{content:"−"}
+summary .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);letter-spacing:.1em;margin-left:auto;font-weight:400}
+.d{padding:0 0 26px 28px}
+.d p{margin:0 0 14px;color:#C8D0E6;font-size:16px}
+.d p:last-child{margin-bottom:0}
+.d strong{color:#fff;font-weight:600}
+.d em{color:var(--beacon);font-style:normal;font-weight:600}
+
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 34px;color:#C8D0E6;font-size:16px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;
+  background:rgba(242,169,59,.16);color:var(--beacon);font-family:'IBM Plex Mono',monospace;font-size:11px;
+  display:grid;place-items:center;font-weight:600}
+ol.steps li:last-child{padding-bottom:0}
+
+code,.k{font-family:'IBM Plex Mono',monospace;font-size:13.5px;background:rgba(255,255,255,.09);
+  padding:2px 7px;border-radius:3px;color:var(--beacon);white-space:nowrap}
+pre{background:#0C1226;border:1px solid rgba(255,255,255,.1);border-left:2px solid var(--beacon);border-radius:0 5px 5px 0;
+  padding:14px 16px;overflow-x:auto;margin:0 0 16px}
+pre code{background:none;padding:0;color:#D9E0F2;font-size:13px;line-height:1.7;white-space:pre}
+
+table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:15px}
+th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--beacon);font-weight:500;padding:0 10px 9px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+td{padding:11px 10px 11px 0;border-bottom:1px solid rgba(255,255,255,.07);color:#C8D0E6;vertical-align:top}
+td:first-child{white-space:nowrap;padding-right:16px}
+
+.note{border-left:2px solid var(--beacon);background:rgba(242,169,59,.07);padding:13px 15px;border-radius:0 5px 5px 0;
+  margin:0 0 16px;font-size:15px;color:#C8D0E6;line-height:1.6}
+.warn{border-left-color:var(--stop);background:rgba(192,69,95,.1)}
+.note b{color:#fff}
+
+.chk{list-style:none;padding:0;margin:0}
+.chk li{padding:11px 0 11px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.07);color:#C8D0E6;font-size:16px}
+.chk li::before{content:"";position:absolute;left:0;top:15px;width:15px;height:15px;border:1.5px solid var(--beacon);border-radius:3px}
+.chk li:last-child{border-bottom:0}
+
+footer{margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate);letter-spacing:.06em;line-height:1.9}
+footer a{color:var(--beacon)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="w">
+
+<header>
+  <p class="sub">Studio · quick reference</p>
+  <h1><i>UR</i>Spective<br>Cheat Sheet</h1>
+  <p class="lede">Tap a section to open it. Everything you need to post a thought, a quote, or a poem from your phone.</p>
+</header>
+
+<details open>
+  <summary>The 90-second routine<span class="n">every day</span></summary>
+  <div class="d">
+    <ol class="steps">
+      <li>Tap the <strong>Studio</strong> icon on your home screen</li>
+      <li>Tap <strong>Mega Thoughts</strong>, then <strong>New</strong></li>
+      <li><strong>Title</strong> — two or three words</li>
+      <li><strong>Topic</strong> — pick from the list</li>
+      <li>Write the thought</li>
+      <li><strong>Summary</strong> — one line, written <em>after</em> the thought</li>
+      <li><strong>Pull quote</strong> — the line worth screenshotting (optional)</li>
+      <li>Tap <strong>Publish</strong></li>
+      <li>Wait 60 seconds, open urspective.com, read it back</li>
+    </ol>
+  </div>
+</details>
+
+<details>
+  <summary>Formatting<span class="n">2 marks</span></summary>
+  <div class="d">
+    <table>
+      <tr><th>Type this</th><th>You get</th></tr>
+      <tr><td><span class="k">**word**</span></td><td>Bold, with an amber highlight behind it</td></tr>
+      <tr><td><span class="k">*word*</span></td><td><em style="font-style:italic;color:#C8D0E6;font-weight:400">Italic</em></td></tr>
+      <tr><td>blank line</td><td>New paragraph</td></tr>
+    </table>
+    <div class="note"><b>That's genuinely all you need.</b> Bold is loud — two or three per thought, maximum. Any more and none of it lands.</div>
+    <p>Never type HTML. Never type the thought number — it's calculated for you.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Posting a quote<span class="n">someone else's words</span></summary>
+  <div class="d">
+    <p>Start the line with a <span class="k">&gt;</span> and a space. Put the attribution on the same line after an em dash.</p>
+    <pre><code>&gt; "Courage is grace under pressure." — Ernest Hemingway</code></pre>
+    <table>
+      <tr><th>Field</th><th>What to put</th></tr>
+      <tr><td>Topic</td><td>Quotes</td></tr>
+      <tr><td>Title</td><td>The idea, not the quote. "Courage", not the whole line.</td></tr>
+      <tr><td>Summary</td><td>What it's about, in your words</td></tr>
+      <tr><td>Pull quote</td><td>Leave blank — the quote is already the feature</td></tr>
+    </table>
+    <div class="note"><b>Add a line of your own underneath.</b> A quote alone is a repost. A quote plus why it hit you today is a Mega Thought. That's the whole difference.</div>
+    <div class="note warn"><b>Only quote what you can attribute.</b> If you can't name who said it, don't post it — half of what circulates as Marcus Aurelius isn't.</div>
+  </div>
+</details>
+
+<details>
+  <summary>Posting a poem<span class="n">line breaks matter</span></summary>
+  <div class="d">
+    <p>Poems are the one case needing something special. Normal paragraphs collapse line breaks; this preserves them.</p>
+    <p>Wrap <strong>each stanza</strong> like this:</p>
+    <pre><code>&lt;p class="verse"&gt;First line here
+Second line here
+Third line here&lt;/p&gt;
+
+&lt;p class="verse"&gt;New stanza starts
+after a blank line&lt;/p&gt;</code></pre>
+    <div class="note"><b>Open tag at the start, close tag at the end, one blank line between stanzas.</b> Copy the block above and type over it — easier than remembering it.</div>
+    <table>
+      <tr><th>Field</th><th>What to put</th></tr>
+      <tr><td>Topic</td><td>Poems</td></tr>
+      <tr><td>Pull quote</td><td>Your strongest single line</td></tr>
+    </table>
+    <p>Bold and italics work inside a verse block exactly as normal.</p>
+  </div>
+</details>
+
+<details>
+  <summary>The fields, decoded<span class="n">what each does</span></summary>
+  <div class="d">
+    <table>
+      <tr><th>Field</th><th>Where it shows up</th></tr>
+      <tr><td>Title</td><td>Headline, share card, and the web address</td></tr>
+      <tr><td>Date</td><td>Sets the order and the number. Leave it on today.</td></tr>
+      <tr><td>Topic</td><td>The filter chips on the Archive page</td></tr>
+      <tr><td>Summary</td><td>The grey line on the thread, and what search matches</td></tr>
+      <tr><td>Pull quote</td><td>The amber-barred line, and the text on the share image</td></tr>
+      <tr><td>Featured</td><td>"Where to start" on About. Best three only.</td></tr>
+      <tr><td>Comments</td><td>Opens the thread. On by default.</td></tr>
+      <tr><td>Jimmy Fund</td><td>The cause block. Off unless it truly fits.</td></tr>
+    </table>
+    <div class="note"><b>Summary rule:</b> under 90 characters, and write it last. You can't compress something you haven't written yet.</div>
+  </div>
+</details>
+
+<details>
+  <summary>Before you tap Publish<span class="n">5 checks</span></summary>
+  <div class="d">
+    <ul class="chk">
+      <li>Title is short enough to text someone</li>
+      <li>Summary written, under 90 characters</li>
+      <li>Topic picked from the existing list</li>
+      <li>Read it once out loud</li>
+      <li>Bold used three times or fewer</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>When something's wrong<span class="n">fixes</span></summary>
+  <div class="d">
+    <table>
+      <tr><th>What you see</th><th>What to do</th></tr>
+      <tr><td>Site hasn't updated after 2 min</td><td>Repo → <strong>Actions</strong> tab. Red X means the build failed; the error is at the bottom.</td></tr>
+      <tr><td>Poem is one run-on block</td><td>Missing the <span class="k">&lt;/p&gt;</span> at the end of the stanza</td></tr>
+      <tr><td>Literal <span class="k">**</span> on the page</td><td>A star with no partner. They come in pairs.</td></tr>
+      <tr><td>Studio asks you to log in again</td><td>Token expired. Make a new one at github.com/settings/tokens</td></tr>
+      <tr><td>Wrong thing published</td><td>Open it in Studio, edit or delete, publish again. Nothing is permanent.</td></tr>
+    </table>
+    <div class="note"><b>You can always fix it.</b> Every thought is a text file. Editing after publishing is normal and costs nothing.</div>
+  </div>
+</details>
+
+<details>
+  <summary>Add this to your home screen<span class="n">do it once</span></summary>
+  <div class="d">
+    <p><strong>iPhone:</strong> Safari → share icon (square with an arrow) → <em>Add to Home Screen</em></p>
+    <p><strong>Android:</strong> Chrome → three-dot menu → <em>Add to Home screen</em></p>
+    <p>Do the same for <span class="k">urspective.com/studio</span>. Two icons: one to write with, one to check against.</p>
+    <div class="note">This page isn't linked from anywhere on the site and search engines are told to skip it. Only someone with the address can find it.</div>
+  </div>
+</details>
+
+<footer>
+  urspective.com/cheatsheet<br>
+  Studio &rarr; <a href="/studio/">urspective.com/studio</a><br>
+  LEVEL OF EFFORT = OPPORTUNITY
+</footer>
+
+</div>
+</body>
+</html>
