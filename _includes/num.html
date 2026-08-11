@@ -1,0 +1,3 @@
+{%- assign _n = 0 -%}{%- assign _total = site.posts.size -%}
+{%- for _p in site.posts -%}{%- if _p.url == include.post.url -%}{%- assign _n = _total | minus: forloop.index0 -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{{- _n | prepend: '00' | slice: -3, 3 -}}

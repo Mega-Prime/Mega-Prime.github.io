@@ -1,0 +1,8 @@
+<section class="band">
+  <div class="wrap">
+    <h2>{% if include.heading %}{{ include.heading }}{% else %}One thought.<br>Every morning.{% endif %}</h2>
+    <p>{% if include.blurb %}{{ include.blurb }}{% else %}No noise, no newsletter bloat. Just the thought, the moment it's posted.{% endif %}</p>
+    {% include email-form.html id=include.id %}
+    <p class="fine">One tap to unsubscribe, always. I never share your address.</p>
+  </div>
+</section>

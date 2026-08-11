@@ -1,0 +1,29 @@
+{%- comment -%}
+  The thread. Pass a post list:  {% include thread.html posts=site.posts %}
+  Dashed markers appear where more than 14 days passed between thoughts.
+  Turn those off with features.show_gaps in _config.yml
+{%- endcomment -%}
+<div class="thread">
+  {%- assign _has_prev = false -%}
+  {%- for p in include.posts -%}
+    {%- if site.features.show_gaps and _has_prev -%}
+      {%- assign _a = _prev_epoch | plus: 0 -%}
+      {%- assign _b = p.date | date: '%s' | plus: 0 -%}
+      {%- assign _days = _a | minus: _b | divided_by: 86400 -%}
+      {%- if _days > 14 -%}
+      <div class="t-gap">— {{ _days | prepend: '' }} days quiet —</div>
+      {%- endif -%}
+    {%- endif -%}
+    <a class="t-item" href="{{ p.url | relative_url }}">
+      <div class="t-meta">
+        <span class="no">No. {% include num.html post=p %}</span>
+        <span>{{ p.date | date: '%m.%d.%Y' }}</span>
+        {% if p.topic %}<span>{{ p.topic }}</span>{% endif %}
+      </div>
+      <h3>{{ p.title }}</h3>
+      {% if p.summary %}<p>{{ p.summary }}</p>{% endif %}
+    </a>
+    {%- assign _prev_epoch = p.date | date: '%s' -%}
+    {%- assign _has_prev = true -%}
+  {%- endfor -%}
+</div>

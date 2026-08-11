@@ -1,0 +1,16 @@
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="lg"><i>UR</i>Spective</span>
+      <span class="ct">No. {{ site.posts.size | prepend: '00' | slice: -3, 3 }}</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="{{ '/' | relative_url }}"{% if page.nav == 'today' %} class="on"{% endif %}>Today</a>
+      <a href="{{ '/archive/' | relative_url }}"{% if page.nav == 'archive' %} class="on"{% endif %}>Archive</a>
+      {% if site.features.shop %}<a href="{{ '/shop/' | relative_url }}"{% if page.nav == 'shop' %} class="on"{% endif %}>Shop</a>{% endif %}
+      <a href="{{ '/about/' | relative_url }}"{% if page.nav == 'about' %} class="on"{% endif %}>About</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <a class="btn" href="{{ '/subscribe/' | relative_url }}">Subscribe</a>
+  </div>
+</header>

@@ -1,0 +1,7 @@
+{% if site.features.cause_block and page.cause != false %}
+<div class="cause">
+  <div class="k">{{ site.cause.label }}</div>
+  <p>{{ site.cause.text }}</p>
+  <a href="{{ site.cause.link_url }}" rel="noopener">{{ site.cause.link_text }} &rarr;</a>
+</div>
+{% endif %}

@@ -1,0 +1,12 @@
+{% if site.services.buttondown_username and site.services.buttondown_username != "" %}
+<form class="row" action="https://buttondown.com/api/emails/embed-subscribe/{{ site.services.buttondown_username }}" method="post" target="_blank">
+  <label class="skip" for="bd-{{ include.id | default: 'a' }}">Email address</label>
+  <input class="inp{% if include.light %} light{% endif %}" type="email" name="email" id="bd-{{ include.id | default: 'a' }}" placeholder="you@email.com" required>
+  <button class="btn" type="submit">Send it to me</button>
+</form>
+{% else %}
+<p class="fine{% if include.light %} dark{% endif %}">
+  Email sign-up switches on the moment <code>buttondown_username</code> is filled in inside <code>_config.yml</code>.
+  Until then, write to <a href="mailto:{{ site.email }}" style="color:var(--beacon)">{{ site.email }}</a> and Mega will add you by hand.
+</p>
+{% endif %}

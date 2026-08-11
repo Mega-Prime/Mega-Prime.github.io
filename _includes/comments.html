@@ -1,0 +1,28 @@
+{%- comment -%}
+  Two switches decide whether this renders:
+    1. site.features.comments  — the master switch in _config.yml
+    2. comments: true/false    — per-thought, in that post's front matter
+{%- endcomment -%}
+{% if site.features.comments and page.comments != false %}
+<section class="cmt" id="conversation">
+  <div class="wrap">
+    <div class="cmt-h">
+      <h2>Start the conversation</h2>
+      <span class="cmt-state">&#9679; Open on this thought</span>
+    </div>
+    {% if site.services.hyvor_website_id and site.services.hyvor_website_id != "" %}
+      <hyvor-talk-comments
+        website-id="{{ site.services.hyvor_website_id }}"
+        page-id="{{ page.url }}"
+        colors="light"></hyvor-talk-comments>
+      <script async type="module" src="https://talk.hyvor.com/embed/embed.js"></script>
+    {% else %}
+      <div class="cmt-off">
+        Comments are switched on, but no Hyvor Talk website ID has been added yet.
+        Paste yours into <code>services.hyvor_website_id</code> in <code>_config.yml</code> and the thread appears here.
+        In the meantime, replies go to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

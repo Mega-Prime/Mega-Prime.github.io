@@ -1,0 +1,31 @@
+<footer class="foot">
+  <div class="wrap-wide">
+    <div class="foot-g">
+      <div>
+        <h4>Read</h4>
+        <a href="{{ '/' | relative_url }}">Today's thought</a>
+        <a href="{{ '/archive/' | relative_url }}">Full archive</a>
+        <a href="{{ '/archive/?topic=Poems' | relative_url }}">Poems</a>
+        <a href="{{ '/about/#start-here' | relative_url }}">Start here</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="{{ '/subscribe/' | relative_url }}">Email</a>
+        <a href="{{ '/subscribe/#text' | relative_url }}">Text message</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" rel="me noopener">LinkedIn</a>{% endif %}
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="{{ '/about/' | relative_url }}">About Mega</a>
+        {% if site.features.shop %}<a href="{{ '/shop/' | relative_url }}">Shop</a>{% endif %}
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="{{ site.cause.link_url }}" rel="noopener">Causes I support</a>
+      </div>
+    </div>
+    <div class="rule">
+      <span>&copy; {{ site.time | date: '%Y' }} URSpective &middot; {{ site.author_full }}</span>
+      <span class="loe">LEVEL OF EFFORT = OPPORTUNITY</span>
+    </div>
+  </div>
+</footer>
