@@ -1,0 +1,67 @@
+---
+layout: default
+---
+{%- capture thought_no %}{% include num.html post=page %}{% endcapture -%}
+
+<article class="post">
+  <div class="wrap">
+    <a class="back" href="{{ '/archive/' | relative_url }}">&larr; The thread</a>
+
+    <div class="stamp">
+      <span>Thought No. {{ thought_no }}</span>
+      <span>&middot;</span>
+      <span>{{ page.date | date: '%m.%d.%Y' }}</span>
+      <i class="bar"></i>
+      {% if page.topic %}<span>{{ page.topic }}</span>{% endif %}
+    </div>
+
+    <h1>{{ page.title }}</h1>
+
+    <div class="body">
+      {% if page.pull %}<div class="pull">{{ page.pull }}</div>{% endif %}
+      {{ content }}
+    </div>
+
+    {% include cause.html %}
+
+    <div class="share">
+      <span class="lbl">Pass it on</span>
+      <button class="sbtn" type="button" data-copy="{{ page.url | absolute_url }}">Copy link</button>
+      <a class="sbtn" href="sms:?&body={{ page.title | cgi_escape }}%20{{ page.url | absolute_url | cgi_escape }}">Text</a>
+      <a class="sbtn" href="mailto:?subject={{ page.title | cgi_escape }}&body={{ page.url | absolute_url | cgi_escape }}">Email</a>
+      <a class="sbtn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener">LinkedIn</a>
+      <button class="sbtn img" type="button" id="cardBtn"
+        data-title="{{ page.title | escape }}"
+        data-quote="{{ page.pull | default: page.summary | escape }}"
+        data-no="{{ thought_no }}"
+        data-date="{{ page.date | date: '%m.%d.%Y' }}">&#9670; Save as image</button>
+    </div>
+  </div>
+</article>
+
+{% include comments.html %}
+
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-h"><h2>Keep going</h2><a class="lnk" href="{{ '/archive/' | relative_url }}">All thoughts &rarr;</a></div>
+    <p class="sec-sub">The ones on either side of this.</p>
+    <div class="thread">
+      {%- if page.next %}
+      <a class="t-item" href="{{ page.next.url | relative_url }}">
+        <div class="t-meta"><span class="no">No. {% include num.html post=page.next %}</span><span>{{ page.next.date | date: '%m.%d.%Y' }}</span>{% if page.next.topic %}<span>{{ page.next.topic }}</span>{% endif %}</div>
+        <h3>{{ page.next.title }}</h3>
+        {% if page.next.summary %}<p>{{ page.next.summary }}</p>{% endif %}
+      </a>
+      {%- endif %}
+      {%- if page.previous %}
+      <a class="t-item" href="{{ page.previous.url | relative_url }}">
+        <div class="t-meta"><span class="no">No. {% include num.html post=page.previous %}</span><span>{{ page.previous.date | date: '%m.%d.%Y' }}</span>{% if page.previous.topic %}<span>{{ page.previous.topic }}</span>{% endif %}</div>
+        <h3>{{ page.previous.title }}</h3>
+        {% if page.previous.summary %}<p>{{ page.previous.summary }}</p>{% endif %}
+      </a>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+{% include subscribe-band.html id="post" heading="Get the next one." blurb="One thought each morning. Two minutes to read. Free, forever." %}
