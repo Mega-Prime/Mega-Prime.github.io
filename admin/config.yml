@@ -6,9 +6,9 @@
 backend:
   name: github
   repo: mega-prime/mega-prime.github.io   # ← change if your repo differs
-  branch: main                             # ← or master, whichever you use
+  branch: master                             # ← or master, whichever you use
   # base_url is the little login helper you set up once. See README-SETUP.md step 6.
-  base_url: https://REPLACE-ME.workers.dev
+  # base_url: https://REPLACE-ME.workers.dev //needs to be deleted
 
 publish_mode: simple
 media_folder: "assets/img"
