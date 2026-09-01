@@ -27,7 +27,7 @@ description: Father. Friend. Educator. Scholar. Engineer. Human.
     <p class="sec-sub">Three from the archive, if you're new.</p>
     {%- assign picks = site.posts | where: 'featured', true -%}
     {%- if picks.size == 0 -%}{%- assign picks = site.posts | slice: 0, 3 -%}{%- endif -%}
-    {% include thread.html posts=picks %}
+    {% include thread.html posts=picks gaps=false %}
 
     {% include cause.html %}
   </div>
