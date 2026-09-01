@@ -45,7 +45,8 @@ social:
 
 # ── JEKYLL ───────────────────────────────────────────────────
 permalink: /thoughts/:title/
-timezone: America/New_York
+timezone: America/New_York 
+future: true
 markdown: kramdown
 plugins:
   - jekyll-feed
