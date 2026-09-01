@@ -60,6 +60,10 @@ defaults:
     values:
       layout: thought
       comments: true
+  - scope: { path: "" }
+    values:
+      image: /assets/img/og.jpg
+
 
 sass:
   style: compressed
