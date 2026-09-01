@@ -6,7 +6,7 @@
 <div class="thread">
   {%- assign _has_prev = false -%}
   {%- for p in include.posts -%}
-    {%- if site.features.show_gaps and _has_prev -%}
+    {%- if site.features.show_gaps and include.gaps != false and _has_prev -%}
       {%- assign _a = _prev_epoch | plus: 0 -%}
       {%- assign _b = p.date | date: '%s' | plus: 0 -%}
       {%- assign _days = _a | minus: _b | divided_by: 86400 -%}
