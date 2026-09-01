@@ -26,7 +26,7 @@ features:
 # ── SERVICES ─────────────────────────────────────────────────
 # Fill these in after you sign up. Empty = that feature stays dark.
 services:
-  hyvor_website_id: ""            # Hyvor Talk → Console → Website ID
+  hyvor_website_id: "15899"            # Hyvor Talk → Console → Website ID
   buttondown_username: ""         # your Buttondown handle
   sms_form_action: ""             # leave blank while on the waitlist
 
